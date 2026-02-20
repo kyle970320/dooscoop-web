@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #fafaf8;
+  --color-foreground: #1a1a18;
+  --color-main: #ff5b2e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family:
+    var(--font-pretendard),
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    Roboto,
+    "Helvetica Neue",
+    "Segoe UI",
+    "Apple SD Gothic Neo",
+    "Noto Sans KR",
+    "Malgun Gothic",
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    sans-serif;
+}
+
+@keyframes floatCard {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(var(--rot, 0deg));
+  }
+  50% {
+    transform: translateY(-12px) rotate(var(--rot, 0deg));
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-fadeUp {
+  animation: fadeUp 0.7s ease forwards;
+}
+
+.animate-fadeUp-delay-1 {
+  animation: fadeUp 0.7s ease forwards 0.15s;
+  opacity: 0;
+}
+
+.animate-fadeUp-delay-2 {
+  animation: fadeUp 0.7s ease forwards 0.3s;
+  opacity: 0;
+}
+
+.animate-fadeUp-delay-3 {
+  animation: fadeUp 0.7s ease forwards 0.45s;
+  opacity: 0;
+}
+
+.animate-fadeUp-delay-4 {
+  animation: fadeUp 0.7s ease forwards 0.6s;
+  opacity: 0;
+}
+
+.section-hidden {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s ease;
+}
+
+.section-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 20s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.btn-main {
+  background: var(--color-main);
+  color: white;
+  border: 2px solid var(--color-main);
+  transition: all 0.2s;
+}
+
+.btn-main:hover {
+  background: var(--color-foreground);
+  border-color: var(--color-foreground);
+  transform: translateY(-2px);
+}
+
+.btn-dark {
+  background: #1a1a18;
+  color: #f5f0e8;
+  border: 2px solid #1a1a18;
+  transition: all 0.2s;
+}
+
+.btn-dark:hover {
+  background: #ff5b2e;
+  border-color: #ff5b2e;
+  transform: translateY(-2px);
+}
+
+.scoop-badge {
+  display: inline-block;
+  background: #ffd447;
+  color: #1a1a18;
+  font-family: var(--font-pretendard), sans-serif;
+  padding: 4px 14px;
+  border-radius: 100px;
+  font-size: 13px;
+}
+
+.card-hover {
+  transition: all 0.25s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.12);
+}
