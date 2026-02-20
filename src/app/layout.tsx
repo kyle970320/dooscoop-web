@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="ko">
       <body className={`${pretendard.variable} bg-background`}>
         <div className="flex flex-col min-h-screen bg-background">
-          <div className="flex-1 max-w-4/5 mx-auto">{children}</div>
+          <div className="flex-1">{children}</div>
         </div>
       </body>
     </html>
